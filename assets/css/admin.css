@@ -1,0 +1,129 @@
+/* assets/css/admin.css */
+/* Admin login */
+.admin-page {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("../images/al.jpg") center / cover no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+}
+
+.admin-login-wrapper {
+    padding: 20px 20px;
+}
+
+.admin-login-wrapper h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #ffe3be;
+    margin-bottom: 1.5rem;
+    letter-spacing: 4px;
+}
+
+.admin-login-wrapper .form-card {
+    text-align: left;
+    border-radius: 16px;
+    padding: 1rem 1rem;
+    width: 100%;
+    max-width: 420px;
+}
+
+.alert {
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.alert-danger {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid #ef4444;
+    color: #ef4444;
+}
+
+.admin-login-wrapper .form-group {
+    margin-bottom: 0.9rem;
+}
+
+.admin-login-wrapper .form-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: #ffe3be;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.admin-login-wrapper .form-group input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(198, 167, 94, 0.25);
+    color: #fff;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.admin-login-wrapper .form-group input:focus {
+    outline: none;
+    border-color: #c6a75e;
+    box-shadow: 0 0 10px rgba(198, 167, 94, 0.4);
+}
+
+.admin-login-wrapper .btn-login {
+    width: 100%;
+    padding: 12px;
+    border-radius: 30px;
+    background: linear-gradient(to right, #c6a75e, #ffe3be);
+    border: 2px solid #000000;
+    color: #111;
+    font-weight: bold;
+    transition: 0.35s;
+    border: none;
+}
+
+.admin-login-wrapper .btn-login:hover {
+    background: linear-gradient(to right, #252525, #414141);
+    color: #c6a75e;
+}
+
+@media (max-width: 600px) {
+
+    .admin-login-wrapper {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .admin-login-wrapper h1 {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
+    }
+
+    .admin-login-wrapper .form-card {
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+
+    .admin-login-wrapper .form-group label {
+        font-size: 0.8rem;
+    }
+
+    .admin-login-wrapper .form-group input {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    .admin-login-wrapper .btn-login {
+        padding: 12px;
+        font-size: 1rem;
+        border-radius: 25px;
+    }
+
+    .alert {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+}

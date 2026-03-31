@@ -1,0 +1,43 @@
+flowchart TB
+  subgraph Actors
+    USER[Customer]
+    ADMIN[Admin]
+  end
+
+  subgraph System[Restaurant System]
+    UC1((Register))
+    UC2((Login))
+    UC3((Browse Menu))
+    UC4((Place Order))
+    UC5((Pay: Cash/Card))
+    UC6((Apply Promo Code))
+    UC7((View/Print Receipt))
+    UC8((Make Reservation))
+    UC9((Edit Pending Reservation))
+
+    UA1((Admin Login))
+    UA2((Manage Menu))
+    UA3((Manage Orders))
+    UA4((Manage Reservations))
+    UA5((Manage Promotions))
+  end
+
+  USER --> UC1
+  USER --> UC2
+  USER --> UC3
+  USER --> UC4
+  USER --> UC5
+  USER --> UC6
+  USER --> UC7
+  USER --> UC8
+  USER --> UC9
+
+  ADMIN --> UA1
+  ADMIN --> UA2
+  ADMIN --> UA3
+  ADMIN --> UA4
+  ADMIN --> UA5
+
+  UC4 --> UC5
+  UC5 --> UC6
+

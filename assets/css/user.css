@@ -1,0 +1,222 @@
+/* assets/css/user.css */
+.user-page {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.877), rgba(0, 0, 0, 0.212)),
+        url("../images/ul.jpg") center / cover no-repeat;
+    min-height: 100vh;
+}
+
+.user-login-wrapper {
+    display: flex;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px;
+}
+
+.user-login-wrapper .form-card {
+    backdrop-filter: blur(18px);
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(198, 167, 94, 0.35);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 15px 40px rgba(198, 167, 94, 0.15);
+    transition: 0.4s ease;
+}
+
+.user-login-wrapper .form-card:hover {
+    border-color: #c6a75e;
+    box-shadow: 0 20px 50px rgba(198, 167, 94, 0.25);
+}
+
+.page-title {
+    font-size: 1.6rem;
+    letter-spacing: 6px;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffe3be;
+    position: relative;
+}
+
+.page-title::after {
+    content: "";
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to right, #c6a75e, #ffe3be);
+    display: block;
+    margin: 1rem auto 0;
+}
+
+.alert {
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.alert-danger {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid #ef4444;
+    color: #ef4444;
+}
+
+.alert-success {
+    background: rgba(34, 197, 94, 0.15);
+    border: 1px solid #22c55e;
+    color: #22c55e;
+}
+
+.user-login-wrapper .form-group {
+    margin-bottom: 0.9rem;
+}
+
+.user-login-wrapper .form-group label {
+    display: block;
+    margin-bottom: -0.7rem;
+    color: #ffe3be;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.user-login-wrapper .form-group input {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffe3be;
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #cccccc;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.user-login-wrapper .form-group input:focus {
+    border-color: #d4af37;
+    outline: none;
+    box-shadow: 0 0 6px rgba(212, 175, 55, 0.4);
+}
+
+.user-login-wrapper .form-group-register label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: #ffe3be;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.user-login-wrapper .form-group-register input {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffe3be;
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #cccccc;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.user-login-wrapper .form-group-register input:focus {
+    border-color: #d4af37;
+    outline: none;
+    box-shadow: 0 0 6px rgba(212, 175, 55, 0.4);
+}
+
+.user-login-wrapper .register-link {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #d1d5db;
+}
+
+.user-login-wrapper .register-link a {
+    color: #c6a75e;
+    transition: 0.3s ease;
+}
+
+.user-login-wrapper .register-link a:hover {
+    color: #ffe3be;
+    text-decoration: underline;
+}
+
+.user-login-wrapper .form-btn {
+    width: 100%;
+    border: 1px solid #c6a75e;
+    color: #ffe3be;
+    background: transparent;
+    border-radius: 30px;
+    padding: 0.7rem 1.8rem;
+    transition: 0.3s ease;
+}
+
+.user-login-wrapper .form-btn:hover {
+    background: #c6a75e;
+    color: #111;
+}
+
+@media (max-width: 600px) {
+
+    /* Background fix (important for mobile performance) */
+    .user-page {
+        background-attachment: scroll;
+    }
+
+    /* Wrapper */
+    .user-login-wrapper {
+        padding: 60px 15px;
+        align-items: flex-start;
+    }
+
+    /* Form Card */
+    .user-login-wrapper .form-card {
+        padding: 1.8rem 1.2rem;
+        border-radius: 12px;
+        max-width: 100%;
+    }
+
+    /* Title */
+    .page-title {
+        font-size: 1.3rem;
+        letter-spacing: 3px;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Alerts */
+    .alert {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    /* Labels */
+    .user-login-wrapper .form-group label,
+    .user-login-wrapper .form-group-register label {
+        font-size: 0.75rem;
+
+    }
+
+    /* Inputs (important for mobile UX) */
+    .user-login-wrapper input {
+        font-size: 16px; /* prevents zoom on iPhone */
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    /* Buttons */
+    .user-login-wrapper .form-btn {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    /* Register link */
+    .user-login-wrapper .register-link {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    /* Remove hover effects on mobile */
+    .user-login-wrapper .form-card:hover {
+        box-shadow: 0 15px 40px rgba(198, 167, 94, 0.15);
+        border-color: rgba(198, 167, 94, 0.35);
+    }
+}

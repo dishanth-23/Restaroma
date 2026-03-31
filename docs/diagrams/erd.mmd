@@ -1,0 +1,82 @@
+erDiagram
+  USERS ||--o{ ORDERS : places
+  ORDERS ||--o{ ORDER_ITEMS : contains
+  MENU_ITEMS ||--o{ ORDER_ITEMS : "ordered as"
+  USERS ||--o{ RESERVATIONS : makes
+
+  USERS {
+    int id PK
+    varchar name
+    varchar email
+    varchar password
+    enum role
+    timestamp created_at
+  }
+
+  ADMIN {
+    int id PK
+    varchar username
+    varchar password
+  }
+
+  MENU_ITEMS {
+    int id PK
+    varchar name
+    text description
+    decimal price
+    varchar image
+    varchar category
+    int quantity
+    timestamp created_at
+  }
+
+  ORDERS {
+    int id PK
+    int user_id FK
+    decimal total_price
+    enum status
+    timestamp created_at
+    varchar payment_method
+    enum payment_status
+    varchar payment_reference
+    varchar promo_code
+    decimal subtotal_amount
+    decimal discount_amount
+  }
+
+  ORDER_ITEMS {
+    int id PK
+    int order_id FK
+    int menu_item_id FK
+    int quantity
+    decimal price
+  }
+
+  RESERVATIONS {
+    int id PK
+    int user_id FK
+    date reservation_date
+    time reservation_time
+    int guests
+    enum status
+    text message
+  }
+
+  PROMOS {
+    int id PK
+    varchar title
+    text description
+    int discount_percent
+    varchar category
+    datetime start_date
+    datetime end_date
+    json images
+    varchar promo_code
+    varchar schedule_type
+    date valid_from
+    date valid_to
+    varchar weekly_days
+    time daily_start_time
+    time daily_end_time
+  }
+

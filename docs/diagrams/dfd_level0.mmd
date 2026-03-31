@@ -1,0 +1,8 @@
+flowchart LR
+  USER[Customer] -->|Register/Login, Orders, Payments, Reservations| SYS((Restaurant System))
+  ADMIN[Admin] -->|Manage Menu, Orders, Reservations, Promos| SYS
+  SYS -->|Read/Write| DB[(Database)]
+  SYS -->|Store/Read Images| FS[(assets/images)]
+  SYS -->|Receipts, Confirmations| USER
+  SYS -->|Dashboards, Lists| ADMIN
+

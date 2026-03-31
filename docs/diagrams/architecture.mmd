@@ -1,0 +1,6 @@
+flowchart LR
+  U[Customer Browser] -->|HTTP| W[PHP Web App]
+  A[Admin Browser] -->|HTTP| W
+  W -->|PDO| DB[(MySQL: restaurant_system)]
+  W --> FS[(File Storage: assets/images)]
+

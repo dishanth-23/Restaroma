@@ -1,0 +1,22 @@
+sequenceDiagram
+  actor User
+  participant App as PHP App
+  participant DB as MySQL
+
+  User->>App: Submit Order (items + quantities)
+  App->>DB: Validate stock (menu_items)
+  App->>DB: Insert orders + order_items (transaction)
+  DB-->>App: order_id
+  App-->>User: Redirect to payment?order_id
+
+  User->>App: Confirm Payment (Cash/Card + promo code)
+  App->>DB: Recompute subtotal from order_items
+  App->>DB: Validate promo schedule (promos)
+  App->>DB: Update orders (subtotal, discount, total, payment_method/status)
+  alt Card payment
+    App->>DB: Decrement menu_items.quantity (atomic)
+    App-->>User: Redirect to receipt (Paid)
+  else Cash payment
+    App-->>User: Redirect to receipt (Unpaid / Cash on Payment)
+  end
+

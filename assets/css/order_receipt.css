@@ -1,0 +1,223 @@
+.order_receipt-page {
+    backdrop-filter: blur(18px);
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("../images/tr.jpg") center / cover no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.receipt-box {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+    border-radius: 12px;
+    border: 1px solid rgba(198, 167, 94, 0.25);
+    color: #f5f5f5;
+    font-family: 'Comfortaa', cursive;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.75);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.receipt-box:hover {
+    transform: translateY(-10px);
+    border-color: #c6a75e;
+    box-shadow: 0 15px 35px rgba(198, 167, 94, 0.15);
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #d4af37, transparent);
+    margin: 20px 0;
+}
+
+.receipt-box h1,
+.receipt-box h2,
+.receipt-box h3 {
+    color: #c6a75e;
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.receipt-box p {
+    color: #e6e6e6;
+    margin: 6px 0;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.receipt-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #111;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.receipt-table th {
+    background: #c6a75e;
+    color: #000;
+    font-weight: bold;
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+
+.receipt-table td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    color: #f1f1f1;
+    font-size: 14px;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.receipt-table tr:last-child td {
+    border-bottom: none;
+}
+
+.receipt-table tr:hover {
+    background: rgba(212, 175, 55, 0.08);
+}
+
+.receipt-total {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 2px solid #c6a75e;
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    color: #c6a75e;
+    letter-spacing: 1px;
+}
+
+.print-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #c6a75e;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.print-btn:hover {
+    background: #f1c40f;
+    transform: scale(1.05);
+}
+
+.receipt-footer {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+.receipt-footer p {
+    margin: 4px 0;
+    color: #d4af37;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.receipt-footer .receipt-contact {
+    font-size: 12px;
+    color: #aaa;
+}
+
+@media print {
+
+    body * {
+        visibility: hidden;
+    }
+
+    .receipt-box,
+    .receipt-box * {
+        visibility: visible;
+    }
+
+    .receipt-box {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .print-btn {
+        display: none;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .receipt-box {
+        width: 100%;
+        margin: 15px 0;
+        padding: 20px 15px;
+        border-radius: 10px;
+    }
+
+    .receipt-box h1 {
+        font-size: 1.5rem;
+    }
+
+    .receipt-box h2 {
+        font-size: 1.2rem;
+    }
+
+    .receipt-box h3 {
+        font-size: 1rem;
+    }
+
+    .receipt-box p {
+        font-size: 12px;
+    }
+
+    /* 📊 Make table scrollable */
+    .receipt-table {
+        overflow-x: hidden;
+        white-space: nowrap;
+    }
+
+    .receipt-table th,
+    .receipt-table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    /* 💰 Total section */
+    .receipt-total {
+        font-size: 16px;
+        text-align: right;
+    }
+
+    /* 🖨 Button full width */
+    .print-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .receipt-footer p {
+        font-size: 12px;
+    }
+
+    .receipt-footer .receipt-contact {
+        font-size: 11px;
+    }
+}
